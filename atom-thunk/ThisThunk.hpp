@@ -55,7 +55,7 @@ namespace {
     size_t size = buffer.size();
 
     buffer.resize(size + sizeof(T));
-    std::memcpy(&buffer[size - 1], reinterpret_cast<unsigned char*>(&data), sizeof(T));
+    std::memcpy(&buffer[size], reinterpret_cast<unsigned char*>(&data), sizeof(T));
 
     return buffer;
   }
